@@ -12,6 +12,4 @@ if ($con->connect_error) {
 else {
     echo "Connected successfully :d " . $host . ' ' . $db . ' ' . $usr . ' ' . $pass . '<br>' ;
 }
-
-
 ?>
