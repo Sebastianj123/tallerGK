@@ -13,7 +13,7 @@ class usuario extends conexion{
     private$ClaveUsua;
     private$fotoUsua;
     private$EstadoUsua;
-},
+};
 
 public function__construct()
    

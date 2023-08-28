@@ -37,24 +37,22 @@
 
     // se almacena en otra variable la sentencia query dentro de un array asociativo (se devuelve la fila segun el correo)
     $string = $query -> fetch_all(MYSQLI_ASSOC);
-    
+    // var_dump($string);
     // Se revisa si devuleve algun dato de lo contrario no existe el usuario
     if(count($string) > 0) {
 
         // Se revisa la compativilidad entre contraseñas de lo contrario marca un error
         // echo('El correo esta bien existe');
         if ($string[0]['password_usuario'] == $password_usuario) {
-            // echo('Esta todo correcto OK');
-
-            // Se incluye un archivo externo
-            include('../productos.html');
+            echo('Esta todo correcto OK');
+            $rol = $string[0]['idRolusuarioFK'];
+            header("Location: ../vistas/user/index.php?rol=$rol");
         }   
         else {
             echo('El usurio si existe pero la contraseña es incorrecta (rectifique su correo y contraseña)');
         }
     
-    } 
-    else {
+    } else {
         echo('El usurio no existe (rectifique su correo)');
     }
 
